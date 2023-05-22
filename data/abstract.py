@@ -119,11 +119,11 @@ class AbstractDataCache(metaclass=ABCMeta):
         try:
             return self.cache[idx].clone()
         except IndexError:
-            return None
+            return False
         except Exception:
-            return None
+            return False
 
-    def delete(self, idx: int):
+    def delete(self, idx: int) -> bool:
 
         if not isinstance(idx, int):
             raise TypeError(Error.NOTINT.value.format('ID', type(idx).__class__.__name__))
@@ -131,9 +131,9 @@ class AbstractDataCache(metaclass=ABCMeta):
         try:
             return self.cache.pop(idx)
         except IndexError:
-            return None
+            return False
         except Exception:
-            return None
+            return False
 
     def update(self, idx: int, data: dict) -> bool:
         if not isinstance(idx, int):
