@@ -12,8 +12,8 @@ DIR_IMP = os.path.abspath(os.path.join(
 sys.path.append(DIR_IMP)
 
 from PySide6.QtWidgets import (
-    QWidget, QAbstractItemDelegate,
-    QListView
+    QWidget, QListView, QTreeWidget,
+    QTreeWidgetItem
 )
 from PySide6.QtCore import (
     Qt, QAbstractListModel, QModelIndex,
